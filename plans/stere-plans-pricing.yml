@@ -1,0 +1,61 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Stere
+providerId: stere
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Insurance
+- Insurtech
+- Embedded Insurance
+- Plans
+description: >-
+  Stere does not publish self-serve pricing or plan tiers for its Underwriting
+  API, Unified API, Distribution, Claims, or Pay Later products. Every public
+  product page ends in a "Get in Touch" / "Contact Sales" call to action rather
+  than a price list or signup form. Commercial terms - implementation fees,
+  per-policy or premium-volume based fees, and any Stere Pay Later financing
+  economics - are negotiated per insurer, MGA, or distribution partner during a
+  sales-led onboarding engagement.
+notes: >-
+  No published numeric pricing exists to reconcile. Verify current commercial
+  terms directly with Stere sales; this file only reflects the qualitative,
+  contact-sales access model described across stere.io.
+sources:
+- https://www.stere.io/
+- https://www.stere.io/stere-api/as-a-service
+- https://www.stere.io/stere-api/stere-unifed-api
+- https://www.stere.io/insurance/stere-distribution
+- https://www.stere.io/insurance/stere-claims
+- https://www.stere.io/payments/stere-pay-later
+plans:
+- id: stere-enterprise
+  name: Enterprise / Custom
+  type: enterprise
+  description: >-
+    The only commercial model Stere publishes: a negotiated, sales-led
+    engagement covering underwriting API build/integration, distribution
+    connectivity, claims, and/or Pay Later, scoped per insurer, MGA, or
+    distribution partner. Contact Stere for a quote.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Underwriting API Build or Bring-Your-Own-API
+  - name: Distribution Connectivity (API, SDK, Webhooks)
+  - name: Claims (FNOL Today; Assessment and Resolution In Development)
+  - name: Stere Pay Later BNPL Gateway
+  - name: Dedicated Onboarding and Integration Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,128 @@
+aid: stere
+url: https://raw.githubusercontent.com/api-evangelist/stere/refs/heads/main/apis.yml
+name: Stere
+kind: company
+description: Stere is a New York-based insurance infrastructure company (founded
+  2021) that lets insurers, MGAs, and distribution partners build and launch
+  digital insurance products - rating, quoting, binding, policy issuance, claims,
+  and premium payments - in weeks rather than years. Its core offering is a
+  "Stere API-as-a-Service" underwriting API (insurers can bring their own API or
+  have Stere build one) plus a separate Stere Unified API and Stere Distribution
+  layer that let brokers, wholesalers, fintechs, and embedded partners reach
+  multiple carriers/products through a single connection (API, SDK, and webhooks).
+  Stere Claims handles FNOL and claims workflow (portions of claims assessment and
+  resolution are marketed as in-development/coming soon), and Stere Pay / Stere Pay
+  Later provides a buy-now-pay-later gateway for insurance premiums. There is no
+  self-serve public developer portal, published API reference, OpenAPI/Swagger
+  document, or sandbox signup on stere.io; the marketing site references a "Stere
+  Docs," "API Changelog," and "API Status" area under /developer/, but those
+  paths return 404 publicly and integration is provisioned per customer after a
+  sales-led partner/insurer onboarding engagement. The APIs below are honestly
+  modeled from Stere's own product marketing pages, not from a published API
+  reference.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- Insurtech
+- Embedded Insurance
+- API-as-a-Service
+- MGA
+- Underwriting
+- Distribution
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+apis:
+- aid: stere:stere-underwriting-api
+  name: Stere Underwriting API
+  tags:
+  - Underwriting
+  - Rate
+  - Quote
+  - Bind
+  - Policy Issuance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.stere.io/stere-api/as-a-service
+  properties:
+  - url: https://www.stere.io/stere-api/as-a-service
+    type: Documentation
+  - url: https://www.stere.io/stere-api/stere-unifed-api
+    type: Documentation
+  description: Stere's API-as-a-Service lets an insurer or MGA either bring its own
+    existing underwriting API ("Bring-your-own-API") or have Stere build one, with
+    rate, quote, bind, policy issuance, data enrichment, KYC/KYB, and billing
+    capabilities, often issuing a policy within seconds with little human
+    intervention. The companion Stere Unified API exposes multiple insurers'
+    products through one interface for consuming platforms. No base URL,
+    authentication scheme, or endpoint reference is published; access is
+    provisioned per insurer/MGA under a commercial engagement.
+  endpointsModeled: true
+- aid: stere:stere-distribution-api
+  name: Stere Distribution API
+  tags:
+  - Distribution
+  - Brokers
+  - Embedded Insurance
+  - Webhooks
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.stere.io/insurance/stere-distribution
+  properties:
+  - url: https://www.stere.io/insurance/stere-distribution
+    type: Documentation
+  - url: https://www.stere.io/solution/for-embedded-insurance
+    type: Documentation
+  description: Stere Distribution gives brokers, wholesalers, fintechs, and embedded
+    partners "broad access to insurance products through a single API connection,"
+    delivered as an API, SDK, webhooks, and pre-built portals so distribution
+    partners can quote and bind across multiple carriers/products without
+    integrating each one separately. No public endpoint reference, webhook event
+    catalog, or base URL is published; partners receive credentials and
+    integration docs directly from Stere.
+  endpointsModeled: true
+- aid: stere:stere-claims-api
+  name: Stere Claims API
+  tags:
+  - Claims
+  - FNOL
+  - Insurance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.stere.io/insurance/stere-claims
+  properties:
+  - url: https://www.stere.io/insurance/stere-claims
+    type: Documentation
+  description: Stere Claims covers First Notice of Loss (FNOL) intake with automated
+    data enrichment today; claims processing against carrier-defined guidelines,
+    automated assessment/decisioning, and resolution workflow are marketed on
+    stere.io as in-development or "coming soon" rather than shipped. No API
+    reference, base URL, or webhook event catalog is published for Claims.
+  endpointsModeled: true
+- aid: stere:stere-pay-api
+  name: Stere Pay Later API
+  tags:
+  - Payments
+  - BNPL
+  - Premium Financing
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.stere.io/payments/stere-pay-later
+  properties:
+  - url: https://www.stere.io/payments/stere-pay-later
+    type: Documentation
+  description: Stere Pay Later is a buy-now-pay-later gateway that lets insurers and
+    distribution partners offer policyholders installment payment plans for
+    insurance premiums, integrated into the existing quote/bind/payment flow.
+    Stere Pay first launched publicly in 2023. No API reference, base URL, or
+    pricing/settlement schedule is published; the gateway is integrated per
+    partner under a commercial agreement.
+  endpointsModeled: true
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/stereio
+- type: Website
+  url: https://www.stere.io/
+- type: Plans
+  url: plans/stere-plans-pricing.yml
+- type: FinOps
+  url: finops/stere-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

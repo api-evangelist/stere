@@ -1,0 +1,94 @@
+aid: stere
+name: Stere
+review:
+  question: Does Stere expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Stere publishes no public API reference
+    of any kind - REST, WebSocket, or SSE. All product pages (Stere API-as-a-
+    Service, Stere Unified API, Stere Distribution, Stere Claims, Stere Pay
+    Later) describe capabilities in marketing language only and end in a
+    "Get in Touch" / "Contact Sales" call to action. With no documented
+    transport or endpoint at all, there is no confirmed request/response or
+    server-push surface to model in AsyncAPI.
+findings:
+  summary: |
+    Stere does not publish a documented public WebSocket API, and in fact
+    does not publish a documented public API of any kind. Stere is an
+    insurance infrastructure company (founded 2021, New York) offering an
+    underwriting API-as-a-service (rate, quote, bind, policy issuance,
+    payments, KYC/KYB), a Unified API for distribution partners, a
+    Distribution layer (API + SDK + webhooks), Claims (FNOL live; assessment
+    and resolution marketed as in-development), and a Stere Pay Later BNPL
+    gateway. The marketing site's navigation references a developer area
+    with "Stere Docs," "API Changelog," and "API Status" pages, but the
+    corresponding paths return HTTP 404 when fetched directly, and no base
+    URL, authentication scheme, endpoint list, OpenAPI/Swagger document, or
+    sandbox signup is published anywhere on stere.io. Access is provisioned
+    per customer after a sales-led onboarding engagement with the insurer,
+    MGA, or distribution partner.
+  developerPortalStatus: |
+    stere.io/developer/stere-for-developer and stere.io/developer/support are
+    live marketing pages that reference "Stere Docs" (/developer/stere-docs),
+    "API Changelog" (/developer/api-changelog), and "API Status"
+    (/developer/api-status), but all three paths returned HTTP 404 when
+    fetched on the review date. A Freshping-hosted status page exists at
+    status.stere.io (proxied to statuspage.freshping.io) confirming Stere
+    operates production infrastructure, but it does not expose an API
+    reference. No self-serve signup, API key generation flow, or sandbox
+    environment is publicly reachable.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: not published
+      documented: false
+      note: Stere's own marketing pages describe REST-style capabilities (rate/quote/bind/policy issuance, distribution, claims, payments) but publish no base URL, authentication scheme, or endpoint reference.
+    - protocol: Webhook
+      scheme: https
+      documented: false
+      note: Stere Distribution is described as including webhooks for partners, but no event catalog, payload schema, or signing/verification scheme is publicly documented.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on stere.io, including on the Underwriting API, Unified API, Distribution, Claims, or Pay Later product pages, as of the review date.
+  endpointsConfirmedRest: []
+sources:
+  - url: https://www.stere.io/
+    type: Website
+    note: Company overview; navigation references Developers/API docs/changelog/status but links resolve to marketing pages or 404.
+  - url: https://www.stere.io/stere-api/as-a-service
+    type: Documentation
+    note: Describes rate/quote/bind/policy issuance/KYC-KYB/billing capabilities; ends in a Contact Sales CTA. No technical reference.
+  - url: https://www.stere.io/stere-api/stere-unifed-api
+    type: Documentation
+    note: Describes the Unified API concept in marketing terms only; no base URL, auth, or endpoints.
+  - url: https://www.stere.io/insurance/stere-distribution
+    type: Documentation
+    note: States distribution partners get access via "API, SDK, webhooks, and pre-built solutions"; no reference material.
+  - url: https://www.stere.io/insurance/stere-claims
+    type: Documentation
+    note: FNOL described as live; claims processing/assessment/resolution described as in development or coming soon.
+  - url: https://www.stere.io/payments/stere-pay-later
+    type: Documentation
+    note: BNPL premium financing gateway; no API reference or pricing published.
+  - url: https://www.stere.io/developer/stere-for-developer
+    type: Documentation
+    note: Developer landing page referencing Stere Docs, API Changelog, and API Status; no working links to technical documentation found.
+  - url: https://www.stere.io/developer/support
+    type: Documentation
+    note: Links to /developer/stere-docs, /developer/api-changelog, /developer/api-status - all returned HTTP 404 on fetch.
+  - url: https://www.linkedin.com/company/stereio
+    type: LinkedIn
+    note: Confirms founding year (2021), New York headquarters, and Insurance/Insurtech/Embedded Insurance industry tags.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists, and no public REST API reference
+    exists either. No AsyncAPI document was created because there is no
+    confirmed transport of any kind to model. All four API entries in
+    apis.yml are marked endpointsModeled: true and sourced from Stere's own
+    product marketing pages rather than a published API reference.

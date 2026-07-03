@@ -1,0 +1,83 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Stere
+providerId: stere
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Insurance
+- Insurtech
+- Embedded Insurance
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Stere spend. Stere is bought as a negotiated enterprise
+  engagement, not metered through a public usage-based API billing surface.
+  No per-call, per-quote, or per-policy price is published for the Underwriting
+  API, Unified API, Distribution layer, Claims, or Pay Later gateway. The only
+  disclosed economic signal is that Stere Pay Later introduces buy-now-pay-later
+  financing economics on top of premium collection, which itself is negotiated
+  per partner.
+notes: >-
+  No public per-unit rates exist to reconcile. This file reflects only the
+  qualitative, contact-sales billing model described on stere.io; verify actual
+  contract economics directly with Stere.
+sources:
+- https://www.stere.io/
+- https://www.stere.io/stere-api/as-a-service
+- https://www.stere.io/payments/stere-pay-later
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Stere
+serviceCategory: Insurtech / Insurance Infrastructure
+billingModel:
+  pricingCategory: Enterprise Contract
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: Stere Platform
+  ServiceCategory: Insurtech / Insurance Infrastructure
+  ProviderName: Stere
+  PublisherName: Stere
+  InvoiceIssuerName: Stere
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Enterprise Contract
+meters:
+- name: policies_issued
+  description: Policies rated/quoted/bound/issued through the Stere Underwriting or Unified API; the plausible basis for volume-based contract terms, not publicly confirmed.
+  unit: policies
+  aggregation: count
+  dimensions:
+  - account
+  - product
+- name: premium_financed
+  description: Premium volume financed through the Stere Pay Later BNPL gateway.
+  unit: currency
+  aggregation: sum
+  dimensions:
+  - account
+  - partner
+principles:
+- name: Visibility
+  description: Track policies issued and premium volume financed per product/partner, since these are the plausible drivers of Stere's negotiated contract pricing (not publicly confirmed).
+- name: Allocation
+  description: Map Stere usage (Underwriting API, Distribution, Claims, Pay Later) to the insurer, MGA, or partner line of business it serves.
+- name: Optimization
+  description: Consolidate distribution connections through the Unified API rather than integrating each carrier separately; scope Claims automation once assessment/resolution features exit development.
+- name: Accountability
+  description: Assign contract ownership to the product/underwriting team; review renewal terms and Pay Later financing economics against actual volume.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
