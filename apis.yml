@@ -115,6 +115,8 @@ apis:
     partner under a commercial agreement.
   endpointsModeled: true
 common:
+- type: DomainSecurity
+  url: security/stere-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/stereio
 - type: Website
@@ -123,6 +125,8 @@ common:
   url: plans/stere-plans-pricing.yml
 - type: FinOps
   url: finops/stere-finops.yml
+- type: Blog
+  url: https://www.stere.io/resources/blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
