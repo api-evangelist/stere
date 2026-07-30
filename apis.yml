@@ -20,7 +20,19 @@ description: Stere is a New York-based insurance infrastructure company (founded
   sales-led partner/insurer onboarding engagement. The APIs below are honestly
   modeled from Stere's own product marketing pages, not from a published API
   reference.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: enterprise
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Requires approval
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stere.png
 tags:
 - Insurance
 - Insurtech
