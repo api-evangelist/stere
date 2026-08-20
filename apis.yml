@@ -50,6 +50,12 @@ apis:
   tags:
   - Underwriting
   - Rate
+  - Quotes
+  - Bind
+  - Policy Issuance
+  tags_raw:
+  - Underwriting
+  - Rate
   - Quote
   - Bind
   - Policy Issuance
@@ -72,6 +78,11 @@ apis:
 - aid: stere:stere-distribution-api
   name: Stere Distribution API
   tags:
+  - Distribution
+  - Brokers
+  - Embedded Insurance
+  - Webhook
+  tags_raw:
   - Distribution
   - Brokers
   - Embedded Insurance
