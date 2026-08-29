@@ -20,6 +20,17 @@ description: Stere is a New York-based insurance infrastructure company (founded
   sales-led partner/insurer onboarding engagement. The APIs below are honestly
   modeled from Stere's own product marketing pages, not from a published API
   reference.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: approval
