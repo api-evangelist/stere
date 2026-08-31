@@ -6,9 +6,9 @@
       "feed_url": "https://www.stere.io/resources/blog",
       "title": "Stere Blog",
       "saved": 0,
-      "error": "parse_failed"
+      "error": "fetch_failed: HTTPError"
     }
   ],
-  "fetched": "2026-08-22T20:08:02Z",
+  "fetched": "2026-08-30T22:05:13Z",
   "post_count": 12
 }
