@@ -134,6 +134,10 @@ apis:
   name: Stere Pay Later API
   tags:
   - Payments
+  - Buy Now Pay Later
+  - Premium Financing
+  tags_raw:
+  - Payments
   - BNPL
   - Premium Financing
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
