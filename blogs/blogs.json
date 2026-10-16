@@ -3,15 +3,10 @@
   "feeds": [
     {
       "source": "https://www.stere.io/resources/blog",
-      "feed_url": "https://www.stere.io/resources/blog",
-      "title": "Stere Blog",
-      "saved": 0,
-      "error": "fetch_failed: HTTPError",
-      "nature": "undetermined",
-      "nature_basis": null
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-10-03T12:15:37Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 12,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
